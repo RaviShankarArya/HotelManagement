@@ -1,0 +1,14 @@
+<table>
+<tr>
+	<td>Item Name</td>
+	<td>Amount</td>
+	<td>Category_Id</td>
+</tr>
+  <% @itemtype.each do |s| %>
+    <tr>
+      <td><%= s.itemtypename %></td>
+      <td><%= s.amount %></td>
+      <td><%=s.category_id%></td>
+    </tr>
+  <% end %>
+</table>

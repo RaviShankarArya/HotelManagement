@@ -1,0 +1,13 @@
+<center>
+	<%=form_for :categories, :url =>categories_path, :method => "post" do |f| %>
+	<table>
+		<tr>
+			<td><%=f.label :ItemName %></td>
+			<td><%=f.text_field :itemname%></td>
+		</tr>
+		<tr>
+			<td><%=f.submit :Save %></td>
+		</tr>
+	</table>
+	<% end %>
+</center>

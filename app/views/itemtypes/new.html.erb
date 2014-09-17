@@ -1,0 +1,22 @@
+<center>
+	<%=form_for :itemtypes, :url => itemtypes_path, :method => "post" do |f| %>
+	<table>
+	    <tr>
+            <td><%=f.label :ItemName %></td>
+	    	<td><%= f.select :category_id, get_course, {},:class => "form-control"%></td>
+	    </tr>
+		<tr>
+			<td><%=f.label :ItemTypeName %></td>
+			<td><%=f.text_field :itemtypename %></td>
+		</tr>
+		<tr>
+			<td><%=f.label :Amount%></td>
+			<td><%=f.text_field :amount%></td>
+		</tr>
+		<tr>
+			<td><%=f.submit :Save%></td>
+		</tr>
+		
+	</table>
+	<% end %>
+</center>
