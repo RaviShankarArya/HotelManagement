@@ -2,22 +2,18 @@
 <%= form_for :mainpages, :url => mainpages_path, :method => "post" do |f| %>
 
 	<table>
-        
+
 		<tr>
-            <td><%=f.label :Categories %></td>
-	    	<td><%= f.select :category_id, get_course, {},:class => "form-control"%></td>
+        <td><%=f.label :Categories %></td>
+	    	<td><%= f.select :category_id, get_course, {},:class => "form-control",:id =>"category"%></td>
 	    </tr>
 	    <tr>
-            <td><%=f.label :ItemType %></td>
-	    	<td><%= f.select :category_id, get_course, {},:class => "form-control", :prompt => "Select location"%></td>
+          <td><%=f.label :ItemType %></td>
+	    	<td class='js-sub-items'><%= f.select :itemtype_id, get_items, {},:class => "form-control", :id => "js-items" %></td>
 	    	<td><%= f.label :Quantity%></td>
 	    	<td><%= f.text_field :quantity%></td>
 	    	<td><%= f.button :Add%></td>
 	    </tr>
-		<tr>
-		    <td><%=f.label :ItemName %></td>
-			<td><%= f.select :category_id, get_course, {},{:multiple => 'multiple'} %></td>
-		</tr>
 		<tr>
 			<td><%= f.label :TotalAmount%></td>
 			<td><%= f.text_field :total_amount %></td>
@@ -25,6 +21,6 @@
 		<tr>
 			<td><%= f.submit :GenerateBill%></td>
 		</tr>
-	</table>
-<% end %>	
+<% end %>
+
 </center>

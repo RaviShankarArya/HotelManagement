@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
    resources :categories
    resources :itemtypes
-   resources :mainpages
+   resources :mainpages do
+    member do
+      post 'populate_sub_category'
+    end
+   end
+
    root 'itemtypes#index'
 
   # Example of regular route:
